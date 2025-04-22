@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+header p {
+    color: #777;
+    font-size: 14px;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    background-color: #f0f4f9;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #666;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.categories a.active {
+    background-color: #3a75c4;
+    color: white;
+}
+
+.categories a:hover:not(.active) {
+    background-color: #e0e6f0;
+}
+
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.course-card {
+    flex: 1 1 250px;
+    max-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.course-image {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.course-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.3)" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,213.3C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+}
+
+.course-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: white;
+    z-index: 1;
+}
+
+.course-details {
+    padding: 16px;
+    background-color: white;
+}
+
+.level-bookmark {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.level {
+    font-size: 12px;
+    color: #666;
+}
+
+.bookmark {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 16px;
+}
+
+.bookmark.active {
+    color: #ff5a5a;
+}
+
+.course-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    height: 42px;
+    overflow: hidden;
+}
+
+.description {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 12px;
+    height: 36px;
+    overflow: hidden;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.rating-value {
+    font-size: 12px;
+    color: #666;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #777;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+}
+
+.duration, .lectures {
+    display: flex;
+    align-items: center;
+}
+
+.duration i, .lectures i {
+    margin-right: 5px;
+}
+
+/* Course specific styles */
+.sketch .course-image {
+    background: linear-gradient(135deg, #ffa26b 0%, #ff8c4c 100%);
+}
+
+.photoshop .course-image {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.photoshop .course-icon {
+    background-color: #31a8ff;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.figma .course-image {
+    background: linear-gradient(135deg, #ff7eb3 0%, #ff5c8d 100%);
+}
+
+.react .course-image {
+    background: linear-gradient(135deg, #61dafb 0%, #2ec7f5 100%);
+}
